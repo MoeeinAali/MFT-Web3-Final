@@ -1,0 +1,133 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #ecf0f1;
+    /* Light gray background */
+}
+
+#container {
+    text-align: center;
+}
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(3, 120px);
+    grid-gap: 10px;
+    border: 5px solid #3498db;
+    /* Border color for the board */
+    border-radius: 10px;
+    background-color: #ecf0f1;
+    /* Light gray background for the board */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.cell {
+    width: 120px;
+    height: 120px;
+    background-color: #ecf0f1;
+    /* Light gray cell background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.cell:hover {
+    background-color: #bdc3c7;
+    /* Slightly darker gray on hover */
+}
+
+.cell:empty::before {
+    content: '';
+}
+
+.cell:contains('X')::before {
+    content: 'X';
+    color: #2ecc71;
+    /* Green for 'X' */
+}
+
+.cell:contains('O')::before {
+    content: 'O';
+    color: #e74c3c;
+    /* Red for 'O' */
+}
+
+.winner {
+    animation: scaleUp 0.5s ease-in-out;
+}
+
+@keyframes scaleUp {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+#reset-container {
+    margin-top: 20px;
+}
+
+#reset-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #3498db;
+    /* Blue reset button */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+#reset-button:hover {
+    background-color: #2980b9;
+    /* Slightly darker blue on hover */
+}
+/* Add this style for winner columns */
+.winner-column {
+    background-color: #2ecc71;
+    /* Green background for winner columns */
+    color: #fff;
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Adjust the winner style for better visibility */
+.winner {
+    animation: scaleUp 0.5s ease-in-out;
+    background-color: #2ecc71;
+    /* Green background for winner cells */
+    color: #fff;
+}
+.winner {
+    background-color: #2ecc71;
+    /* Green background for winner cells */
+    color: #fff;
+    transition: background-color 0.3s ease-in-out;
+}
+/* Add this style for the header */
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #3498db;
+    /* Blue background for the header */
+    color: #fff;
+}
+
+h1 {
+    margin: 0;
+}
